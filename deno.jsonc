@@ -1,0 +1,13 @@
+{
+    "tasks": {
+        "dev": "deno run --allow-net --allow-write --allow-read --allow-env --watch src/main.ts",
+        "test": "deno test --watch --allow-read",
+        "bench": "deno bench --watch --allow-read",
+        "fmt": "deno fmt --watch",
+        "lint": "deno lint --watch"
+    },
+    "fmt": {
+        "singleQuote": true,
+        "indentWidth": 4
+    }
+}

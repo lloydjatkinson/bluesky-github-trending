@@ -1,0 +1,32 @@
+export const primaryLanguageFilter = [
+    'python',
+    'jupyter notebook',
+] as const;
+
+export const keywordFilter = [
+    'chatgpt',
+    'chat-gpt',
+    'chatglm',
+    'chat-glm',
+    'chatlaw',
+    'gpt',
+    'llm',
+    'tensor',
+    'langchain',
+    'langflow',
+    'openai',
+    'llama',
+    'autonomous AI agent',
+    'self supervised',
+    'self-supervised',
+    'machine learning',
+    'artificial intelligence',
+    'language models',
+    'language-models',
+    'pytorch',
+    'data science',
+    'nft',
+    'web3',
+    'crypto',
+    'internship',
+] as const;
