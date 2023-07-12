@@ -25,6 +25,7 @@ schedulePost({
             url: configuration.githubTrendingUrl,
         });
         if (result.success) {
+            // deno-lint-ignore no-unused-vars
             const filtered = filterRepositories({
                 repositories: result.value,
                 languages: primaryLanguageFilter,
