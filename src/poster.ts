@@ -14,6 +14,7 @@ type PostingResult =
 export const postStatistics = (
     {
         logger,
+        // deno-lint-ignore no-unused-vars
         agentService,
         repositories,
     }: {

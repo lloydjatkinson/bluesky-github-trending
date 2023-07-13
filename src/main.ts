@@ -2,8 +2,6 @@ import { load } from 'https://deno.land/std@0.193.0/dotenv/mod.ts';
 import { getLogger, setupLogging } from './logging.ts';
 import { scheduleJob } from './scheduler.ts';
 import { fetchAndParse } from './scraper.ts';
-import { filterRepositories } from './filter.ts';
-import { keywordFilter, primaryLanguageFilter } from './filter-defaults.ts';
 import { getConfiguration } from './configuration.ts';
 import { getAuthenticatedAgent } from './agent.ts';
 import { postStatistics } from './poster.ts';
