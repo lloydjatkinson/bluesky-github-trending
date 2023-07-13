@@ -28,5 +28,7 @@ export const keywordFilter = [
     'nft',
     'web3',
     'crypto',
+    'ethereum',
     'internship',
+    'cypress',
 ] as const;

@@ -14,6 +14,7 @@ type LoggerType =
     | 'Scraper'
     | 'Filter'
     | 'Agent'
+    | 'Poster'
     | 'Scheduler';
 
 /**
@@ -67,6 +68,14 @@ export const setupLogging = async () => {
                 handlers: ['console', 'file'],
             },
             'Scraper': {
+                level: 'DEBUG',
+                handlers: ['console', 'file'],
+            },
+            'Agent': {
+                level: 'DEBUG',
+                handlers: ['console', 'file'],
+            },
+            'Poster': {
                 level: 'DEBUG',
                 handlers: ['console', 'file'],
             },

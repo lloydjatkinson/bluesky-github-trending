@@ -29,7 +29,7 @@ export const getConfiguration = (
     return {
         agentService: configuration['AGENT_SERVICE'],
         appUsername: configuration['APP_USERNAME'],
-        appPassword: configuration['AGENT_PASSWORD'],
+        appPassword: configuration['APP_PASSWORD'],
         githubTrendingUrl: new URL(configuration['GITHUB_TRENDING_URL']),
     };
 };

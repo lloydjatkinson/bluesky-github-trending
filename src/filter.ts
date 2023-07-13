@@ -1,3 +1,4 @@
+import { sortBy } from 'https://deno.land/std@0.194.0/collections/sort_by.ts';
 import { RepositoryStatistics } from './types.ts';
 
 /**
@@ -43,5 +44,9 @@ export const filterRepositories = (
             )
         );
 
-    return filtered;
+    const sorted = sortBy(filtered, (repository) => repository.starsToday, {
+        order: 'desc',
+    });
+
+    return sorted;
 };

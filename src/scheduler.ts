@@ -9,7 +9,7 @@ type Job = Readonly<{
     action: () => Promise<void>;
 }>;
 
-export const schedulePost = ({ pattern, name, logger, action }: Job) => {
+export const scheduleJob = ({ pattern, name, logger, action }: Job) => {
     try {
         const logWrappedAction = async () => {
             logger.debug(`Running job "${name}"`);

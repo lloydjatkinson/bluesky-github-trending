@@ -34,6 +34,7 @@
     "https://deno.land/std@0.193.0/testing/asserts.ts": "056d571baaefc7f13af3e29ad6a66d4dbe5355d3cb2ae130e7d2a1b1e01085e3",
     "https://deno.land/std@0.193.0/testing/bdd.ts": "0c760348442712ca3ae6102dbb3aa76b49a95ee08fee86c8a0932de53a00e308",
     "https://deno.land/std@0.193.0/testing/mock.ts": "220ed9b8151cb2cac141043d4cfea7c47673fab5d18d1c1f0943297c8afb5d13",
+    "https://deno.land/std@0.194.0/collections/sort_by.ts": "e69f2547f40f1095949d8f47f5f114aff7d0f11c248b39515365e99bc5e85744",
     "https://deno.land/x/croner@6.0.3/dist/croner.js": "a28ce3562d41922dd3060542001ded2e8546528e495b554e42ecdf0b1db5c382",
     "https://deno.land/x/deno_mock_fetch@1.0.1/mock-fetch.error.ts": "c75e83b959d0b4b18bc5434c15dc5ab40a37fe6069cb51d7607a22391a7b22af",
     "https://deno.land/x/deno_mock_fetch@1.0.1/mock-fetch.ts": "bc06fb96910aea4c042b7c7387887fecd70f272b7230de0262711c878066111c",
