@@ -1,9 +1,11 @@
-import { assertEquals } from 'https://deno.land/std@0.193.0/testing/asserts.ts';
+import {
+    assert,
+    assertEquals,
+} from 'https://deno.land/std@0.193.0/testing/asserts.ts';
 import { faker } from 'npm:@faker-js/faker';
 import { RepositoryStatistics } from './types.ts';
 import { filterRepositories } from './filter.ts';
 
-faker.seed(100);
 const defaultRepository: RepositoryStatistics = {
     name: `${faker.lorem.slug()}`,
     description: faker.lorem.sentence(),
@@ -139,5 +141,22 @@ Deno.test('filter', async (test) => {
         });
 
         assertEquals(result.length, 4);
+    });
+
+    await test.step('should sort repositories by number of stars today', () => {
+        const repositories = createRepositories(3).map((repository) => ({
+            ...repository,
+            starsToday: faker.number.int(500),
+        }));
+
+        const result = filterRepositories({
+            repositories: repositories,
+            languages: languagesToFilter,
+            keywords: keywordsToFilter,
+        });
+
+        const [first, second, third] = result;
+        assert(first.starsToday >= second.starsToday);
+        assert(second.starsToday >= third.starsToday);
     });
 });
