@@ -42,3 +42,11 @@ jobs:
         
       - name: Run benchmarks
         run: deno bench -A
+
+      - name: Deploy
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: whoami
