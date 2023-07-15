@@ -42,11 +42,23 @@ jobs:
         
       - name: Run benchmarks
         run: deno bench -A
-
-      - name: Deploy
-        uses: appleboy/ssh-action@v0.1.10
+      
+      - name: Deno release build
+        run: deno compile -A src/main.ts --output bluesky-github-trending
+        
+      - name: Upload binary
+        uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          script: whoami
+          source: "bluesky-github-trending"
+          target: /usr/local/bin
+
+#       - name: Deploy
+#         uses: appleboy/ssh-action@v0.1.10
+#         with:
+#           host: ${{ secrets.SSH_HOST }}
+#           username: ${{ secrets.SSH_USERNAME }}
+#           key: ${{ secrets.SSH_KEY }}
+#           script: whoami
