@@ -53,7 +53,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           source: "bluesky-github-trending"
-          target: /usr/local/bin
+          target: /home/lloyd/bin
 
 #       - name: Deploy
 #         uses: appleboy/ssh-action@v0.1.10
