@@ -42,3 +42,27 @@ jobs:
         
       - name: Run benchmarks
         run: deno bench -A
+      
+      - name: Deno release build
+        run: deno compile -A src/main.ts --output agent
+        
+      - name: Setup environment variables
+        run: |
+          echo "${{ secrets.ENV }}" > .env
+        
+      - name: Upload binary
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "agent,.env"
+          target: /home/lloyd/bin/bluesky-github-trending
+
+#       - name: Deploy
+#         uses: appleboy/ssh-action@v0.1.10
+#         with:
+#           host: ${{ secrets.SSH_HOST }}
+#           username: ${{ secrets.SSH_USERNAME }}
+#           key: ${{ secrets.SSH_KEY }}
+#           script: whoami
