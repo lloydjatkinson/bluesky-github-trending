@@ -56,7 +56,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          source: "bluesky-github-trending,.env"
+          source: "agent,.env"
           target: /home/lloyd/bin/bluesky-github-trending
 
 #       - name: Deploy
